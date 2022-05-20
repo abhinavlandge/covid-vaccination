@@ -1,0 +1,79 @@
+<div class="container-fluid   bdy">
+  <div class="row">
+    <div class="col-lg-4"></div>
+    <div class="col-lg-4">
+      <h2><i class="fas fa-virus "></i> COVID VACCINATION LIST</h2> 
+    </div>
+    <div class="col-lg-4"></div>
+  </div>
+  <div class="row">
+
+<div class="col-lg-3">
+  <li class="list-group-item list-group-item-dark color"><h4><i class="fas fa-user-circle color"></i> Candidates</h4></li>
+  <li class="list-group-item list-group-item-light" *ngFor="let item of candidateList;let i = index"><i class="fas fa-user "></i>   {{item}}
+    <button class=" btn float-right" (click)="delete(i)">
+      <i class="fa fa-close float-right color"></i>
+      </button>
+  
+    <button class=" btn float-right" (click)="dose1(i)">
+    <i class=" far fa-arrow-alt-circle-right float-right color2"></i>
+    </button>
+
+   
+  
+  </li>
+</div>
+
+
+<div class="col-lg-3">
+  <li class="list-group-item list-group-item-dark color"><h4><i class="fas fa-syringe color"></i> Dose 1</h4></li>
+  <li class="list-group-item list-group-item-warning" *ngFor="let d1 of doseNo1;let i = index"><i class="fas fa-user-check "></i> {{d1}}
+  
+    <button class=" btn float-right" (click)="undoD1(i)">
+      <i class="fa fa-undo float-right color3"></i>
+      </button>
+  
+    <button class=" btn float-right" (click)="dose2(i)">
+      <i class=" far fa-arrow-alt-circle-right float-right color2"></i>
+      </button>
+  </li>
+</div>
+
+
+
+<div class="col-lg-3">
+  <li class="list-group-item list-group-item-dark color"><h4><i class="fas fa-syringe color"></i> Dose 2</h4></li>
+  <li class="list-group-item list-group-item-primary "*ngFor="let d2 of doseNo2;let i = index"><i class="fas fa-user-check "></i> {{d2}}
+  
+    <button class=" btn float-right" (click)="undoD2(i)">
+      <i class="fa fa-undo float-right color3"></i>
+      </button>
+  
+    <button class=" btn float-right" (click)="bDose(i)">
+      <i class=" far fa-arrow-alt-circle-right float-right color2"></i>
+      </button>
+    </li>
+</div>
+
+
+
+
+<div class="col-lg-3">
+  <li class="list-group-item list-group-item-dark color"><h4><i class="fas fa-syringe color"></i> Boosted Dose</h4></li>
+  <li class="list-group-item list-group-item-success"
+  *ngFor="let bd of boosterDose;let i = index"><i class="fas fa-user-shield "></i> {{bd}}
+  
+  <button class=" btn float-right" (click)="undoD3(i)">
+    <i class="fa fa-undo float-right color3"></i>
+    </button>
+<!-- 
+  <button class=" btn float-right" (click)="bDose(i)">
+    <i class=" far fa-arrow-alt-circle-right float-right color2"></i>
+    </button> -->
+  </li>
+</div>
+
+  </div>
+</div>
+
+<router-outlet></router-outlet>
